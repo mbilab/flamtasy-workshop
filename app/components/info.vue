@@ -27,8 +27,15 @@ export default {
   color: #105447
   font-weight: bolder
 .content
-  img
-    max-width: 100%
+  .image
+    padding: 2vw 0
+    text-align: center
+    img
+      max-width: 80%
+      height: 50vh
+    p
+      margin: 0
+      font-size: 0.8vw
   ul
     margin: 0
     padding: 0
