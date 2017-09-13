@@ -19,7 +19,6 @@ import Work from './components/work.vue'
 import Contact from './components/contact.vue'
 import Article from './components/article.vue'
 
-
 export default {
   name: 'App',
   data(){
@@ -45,34 +44,21 @@ export default {
 
 </script>
 
-<style lang='sass'>
+<style lang='sass' scoped>
 .app
   background: #fff
   margin: 0 auto
+  padding: 0 0 2vw 0
   max-width: 81.5625%
   min-height: 100%
 .main
   display: flex
   .v-article
     flex: 0
-    margin: 0 8.6979vw 0 0
+    margin: 2.0833vw 8.6979vw 0 1.7187vw
   .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
     padding: 0 0 0 4.167vw
     flex: 1 1 50.3646vw
-.title
-  font-size: 2.526vw
-  font-weight: bold
-  padding: 0 0 0.8854vw 0
-.thumb
-  padding: 0 0 0.9896vw 0.521vw
-.context
-  font-size: 1.0525vw
-  font-weight: normal
-.context
-  line-height: 30pt
-  letter-spacing: 1
-li
-  list-style-type: none
 ::-webkit-scrollbar
   width: 0.5em
 ::-webkit-scrollbar-track
@@ -82,4 +68,12 @@ li
   border-radius: 10px
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
 
+</style>
+<style lang='sass'>
+.title
+  font-size: 2.526vw
+  font-weight: bold
+  padding: 0 0 0.8854vw 0
+.thumb
+  padding: 0 0 0.9896vw 0.521vw
 </style>

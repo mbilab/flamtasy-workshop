@@ -42,11 +42,11 @@ li:hover
   cursor: hand
 .line
   clear: left
-  height: 1.0417vw
+  padding: 1.0417vw 0 1.5625vw 0
 .menu
-  padding: 9.0104vw 0 1.0417vw
+  padding: 9.0104vw 0 0 0
 .top
-  padding: 0.9375vw 0 1.5625vw 0
+  padding: 0.9375vw 0 0 0
 #bar
   position: absolute
   bottom: 0

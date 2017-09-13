@@ -16,6 +16,9 @@ const config = {
     },
   },
   entry: './app.js',
+  node: {
+    fs: 'empty'
+  },
   module: {
     rules: [
       {
@@ -61,6 +64,12 @@ const config = {
         use: [
           { loader: 'style-loader', options: { insertAt: 'top' } },
           { loader: 'css-loader' },
+        ]
+      },
+      {
+        test: /\.html/,
+        use: [
+          { loader: 'html-loader' }
         ]
       }
     ]

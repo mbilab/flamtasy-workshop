@@ -22,6 +22,8 @@ export default {
 <style lang='sass' scoped>
 img
   width: 100%
+li
+  list-style-type: none
 ul
   padding: 0
   margin: 0

@@ -27,13 +27,15 @@ export default {
 </script>
 
 <style lang='sass' scoped>
+li
+  list-style-type: none
 ul
   padding: 0
   margin: 0
 .work-set li
   float: left
   text-align: center
-  padding: 0 2vw 0 2vw
+  padding: 0 1.5vw
   font-size: 0.7894vw
   font-weight: bold
   color: #105447

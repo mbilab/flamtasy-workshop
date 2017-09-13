@@ -30,6 +30,7 @@ img
   li
     text-align: left
     padding-left: 2vw
+    list-style-type: none
   .green
     color: #105447
 </style>

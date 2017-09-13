@@ -1,22 +1,40 @@
 <template lang='pug'>
 .info
   .title 課程資訊
-  .thumb: iframe(src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fncku.eesa%2F&width=75&layout=button_count&action=like&size=small&show_faces=false&share=false&height=24&appId=670837969786390" width="77" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
-  .context
-    li 2017課程資訊
-    li 開課時間：2017年9月30日開始，共計15週
-    li 上課地點：成功大學電機系 一樓靄雲廳
-    li 課程時間：每週六下午 14:00~16:00 企劃課程
-    li 每週三晚上 19:00~21:00 程式課程(線上直播)
-    li 課程內容：Unity3D程式教學、手機解謎遊戲實作
+  .thumb: iframe(src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FNCKUflamtastworkshop%2F%3Fhc_ref%3DARR9BJa0r9UJvCcwqDpNP2ZuCoTYIBmx7LL2OJoS_lEZH_ofVich_s6sADLfJk2ATXw&width=75&layout=button_count&action=like&size=small&show_faces=false&share=false&height=21&appId=670837969786390" width="77" height="24" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
+  .content(v-html='content')
 </template>
 
 <script>
 export default {
   name: 'Info',
+  data(){
+    return {
+      content: require('../assets/info.html')
+    }
+  },
 }
 </script>
 
 <style lang='sass' scoped>
-
+</style>
+<style lang='sass'>
+.content
+  font-size: 1.0525vw
+  line-height: 15pt
+  letter-spacing: 1
+.subtitle
+  color: #105447
+  font-weight: bolder
+.content
+  img
+    max-width: 100%
+  ul
+    margin: 0
+    padding: 0
+  li
+    list-style-position: inside
+    li
+      padding: 0 0 0 2vw
+      list-style-type: circle
 </style>
