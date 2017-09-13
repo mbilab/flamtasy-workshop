@@ -23,7 +23,7 @@ export default {
   name: 'App',
   data(){
     return {
-      page: '',
+      page: 1,
     }
   },
   components: {
@@ -45,20 +45,18 @@ export default {
 </script>
 
 <style lang='sass'>
-.v-article
-  float: left
-.v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
-  padding: 0 0 0 4.167vw
-  width: 50.3646vw
-  float: left
 .app
-  height: 100%
-  width: 100%
-  overflow: hidden
+  background: #fff
   margin: 0 auto
-  max-width: 81.5625vw
+  max-width: 81.5625%
 .main
-  overflow-y: scroll
+  display: flex
+  .v-article
+    flex: 0
+    margin: 0 167px 0 0
+  .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
+    padding: 0 0 0 4.167vw
+    flex: 1 1 50.3646vw
 .title
   font-family: Microsoft JhengHei
   font-size: 2.526vw
@@ -78,10 +76,10 @@ li
 ::-webkit-scrollbar
   width: 0.5em
 ::-webkit-scrollbar-track
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   border-radius: 10px
 ::-webkit-scrollbar-thumb
   border-radius: 10px
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
 
 </style>
