@@ -18,30 +18,3 @@ export default {
 
 <style lang='sass' scoped>
 </style>
-<style lang='sass'>
-.content
-  font-size: 1.0525vw
-  line-height: 15pt
-  letter-spacing: 1
-.subtitle
-  color: #105447
-  font-weight: bolder
-.content
-  .image
-    padding: 2vw 0
-    text-align: center
-    img
-      max-width: 80%
-      height: 50vh
-    p
-      margin: 0
-      font-size: 0.8vw
-  ul
-    margin: 0
-    padding: 0
-  li
-    list-style-position: inside
-    li
-      padding: 0 0 0 2vw
-      list-style-type: circle
-</style>

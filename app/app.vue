@@ -76,4 +76,32 @@ export default {
   padding: 0 0 0.8854vw 0
 .thumb
   padding: 0 0 0.9896vw 0.521vw
+.content
+  font-size: 1.0525vw
+  letter-spacing: 1
+  @media screen and (min-width: 500px)
+    line-height: 4vh
+  @media screen and (max-width: 500px)
+    line-height: 2.5vw
+.subtitle
+  color: #105447
+  font-weight: bolder
+.content
+  .image
+    padding: 2vw 0
+    text-align: center
+    img
+      max-width: 80%
+      max-height: 50vh
+    p
+      margin: 0
+      font-size: 0.8vw
+  ul
+    margin: 0
+    padding: 0
+  li
+    list-style-position: inside
+    li
+      padding: 0 0 0 2vw
+      list-style-type: circle
 </style>
