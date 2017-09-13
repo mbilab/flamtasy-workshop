@@ -19,6 +19,7 @@ import Work from './components/work.vue'
 import Contact from './components/contact.vue'
 import Article from './components/article.vue'
 
+
 export default {
   name: 'App',
   data(){
@@ -49,23 +50,22 @@ export default {
   background: #fff
   margin: 0 auto
   max-width: 81.5625%
+  min-height: 100%
 .main
   display: flex
   .v-article
     flex: 0
-    margin: 0 167px 0 0
+    margin: 0 8.6979vw 0 0
   .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
     padding: 0 0 0 4.167vw
     flex: 1 1 50.3646vw
 .title
-  font-family: Microsoft JhengHei
   font-size: 2.526vw
   font-weight: bold
   padding: 0 0 0.8854vw 0
 .thumb
   padding: 0 0 0.9896vw 0.521vw
 .context
-  font-family: Microsoft JhengHei
   font-size: 1.0525vw
   font-weight: normal
 .context
