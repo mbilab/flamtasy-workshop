@@ -34,7 +34,7 @@ ul
   float: left
   text-align: center
   padding: 0 2vw 0 2vw
-  font-size: 0.0894vw
+  font-size: 0.7894vw
   font-weight: bold
   color: #105447
   @media screen and (min-width: 750px)

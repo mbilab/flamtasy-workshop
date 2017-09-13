@@ -1,8 +1,8 @@
 <template lang='pug'>
 .article
-  .image: img(src='../img/workshop.png')
+  .image: img(src='../assets/img/workshop.png')
   .article-title 文章列表
-  .line: img(src='../img/blackline.png')
+  .line: img(src='../assets/img/blackline.png')
   .list: ul
     li(src='') Unity3D程式教學
     li(src='') RE:從0開始的unity工程師之路
