@@ -1,10 +1,10 @@
 <template lang='pug'>
 .app
-  v-top(@panelChange='panelChange')
+  v-top(@panelChange='panelChange' @yearFilter='yearFilter')
   .main
     v-info.v-info(v-if='page==1')
     v-about.v-about(v-if='page==2')
-    v-video.v-video(v-if='page==3')
+    v-video.v-video(v-if='page==3' :year='year')
     v-work.v-work(v-if='page==4')
     v-contact.v-contact(v-if='page==5')
     v-article.v-article
@@ -24,6 +24,7 @@ export default {
   data(){
     return {
       page: 1,
+      year: '',
     }
   },
   components: {
@@ -38,6 +39,9 @@ export default {
   methods: {
     panelChange: function(page){
       this.page=page
+    },
+    yearFilter: function(year){
+      this.year=year
     },
   }
 }

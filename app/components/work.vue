@@ -42,15 +42,20 @@ ul
   @media screen and (min-width: 750px)
     min-height: 20vw
     width: 21.3542vw
+    img
+      max-width: 11.9492vw
+      max-height: 12vw
   @media screen and (max-width: 750px)
     min-height: 25vw
     width: 30vw
+    img
+      max-width: 11.9492vw
+      max-height: 25vw
+
 .work-title
   padding: 0 0 2vh 0
 .work-image
   width: 100%
   img
-    width: 11.9492vw
     opacity: 0.5
-
 </style>

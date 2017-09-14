@@ -10,7 +10,7 @@
     li(src='') 網路可以做到什麼?
   .fbicon
     i.fa.fa-facebook-official
-    a(href='https://www.facebook.com/NCKUflamtastworkshop/?hc_ref=ARQdMqVJEc11dY8ZxmfBjuTwzyPa93JdCm-rDOGWXksLbT5JKqFQf1pwDVTr3znbHzo')  NCKU遊戲實務工作坊
+    a(href='https://www.facebook.com/NCKUflamtastworkshop/?hc_ref=ARQdMqVJEc11dY8ZxmfBjuTwzyPa93JdCm-rDOGWXksLbT5JKqFQf1pwDVTr3znbHzo' target='_blank')  NCKU遊戲實務工作坊
 </template>
 
 <script>
