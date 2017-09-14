@@ -47,12 +47,14 @@ ul
     padding: 0.262vw
 
   li:nth-child(3)
-    border-top-left-radius: 5px
-    border-top-right-radius: 5px
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
     position: relative
 
     .list
       background: #D1E6D7
+      border-top-left-radius: 0
+      border-top-right-radius: 0
       border-bottom-left-radius: 5px
       border-bottom-right-radius: 5px
       display: none
