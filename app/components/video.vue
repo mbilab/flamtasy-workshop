@@ -39,27 +39,34 @@ export default {
 <style lang='sass' scoped>
 li
   list-style-type: none
+
 ul
-  padding: 0
   margin: 0
+  padding: 0
+
 .video-set li
+  color: #105447
   float: left
-  padding: 0 1.5vw 2vw 1.5vw
   font-size: 0.7894vw
   font-weight: bold
-  color: #105447
+  padding: 0 1.5vw 2vw 1.5vw
+
   @media screen and (min-width: 850px)
     min-height: 15vw
     width: 21.3542vw
+
     iframe
       width: 21.3542vw
   @media screen and (max-width: 850px)
     min-height: 20vw
     width: 30vw
+
     iframe
       width: 30.3542vw
+
 .video-title
   padding: 0 0 0.5vh 0
+
 .video-url
   width: 100%
 </style>

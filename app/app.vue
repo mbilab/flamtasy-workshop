@@ -19,6 +19,7 @@ import Work from './components/work.vue'
 import Contact from './components/contact.vue'
 import Article from './components/article.vue'
 
+
 export default {
   name: 'App',
   data(){
@@ -52,17 +53,66 @@ export default {
 .app
   background: #fff
   margin: 0 auto
-  padding: 0 0 2vw 0
   max-width: 81.5625%
   min-height: 100%
+  padding: 0 0 2vw 0
+
 .main
   display: flex
+
   .v-article
     flex: 0
     margin: 2.0833vw 8.6979vw 0 1.7187vw
+
   .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
-    padding: 0 0 0 4.167vw
     flex: 1 1 50.3646vw
+    padding: 0 0 0 4.167vw
+
+</style>
+<style lang='sass'>
+.content
+  letter-spacing: 1
+  @media screen and (min-width: 500px)
+    font-size: 1em
+    line-height: 1.7em
+  @media screen and (max-width: 500px)
+    font-size: 0.5em
+
+  .image
+    padding: 2vw 0
+    text-align: center
+
+    img
+      max-height: 50vh
+      max-width: 80%
+
+    p
+      font-size: 0.2em
+      margin: 0
+
+  ul
+    margin: 0
+    padding: 0
+
+  li
+    list-style-position: inside
+
+    li
+      list-style-type: circle
+      padding: 0 0 0 2vw
+
+.subtitle
+  color: #105447
+  font-weight: bolder
+
+.title
+  font-size: 2.526vw
+  font-weight: bold
+  padding: 0 0 0.8854vw 0
+
+.thumb
+  padding: 0 0 0.9896vw 0.521vw
+
 ::-webkit-scrollbar
   width: 0.5em
 ::-webkit-scrollbar-track
@@ -71,41 +121,4 @@ export default {
 ::-webkit-scrollbar-thumb
   border-radius: 10px
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
-
-</style>
-<style lang='sass'>
-.title
-  font-size: 2.526vw
-  font-weight: bold
-  padding: 0 0 0.8854vw 0
-.thumb
-  padding: 0 0 0.9896vw 0.521vw
-.content
-  font-size: 1.0525vw
-  letter-spacing: 1
-  @media screen and (min-width: 500px)
-    line-height: 4vh
-  @media screen and (max-width: 500px)
-    line-height: 2.5vw
-.subtitle
-  color: #105447
-  font-weight: bolder
-.content
-  .image
-    padding: 2vw 0
-    text-align: center
-    img
-      max-width: 80%
-      max-height: 50vh
-    p
-      margin: 0
-      font-size: 0.8vw
-  ul
-    margin: 0
-    padding: 0
-  li
-    list-style-position: inside
-    li
-      padding: 0 0 0 2vw
-      list-style-type: circle
 </style>

@@ -29,33 +29,41 @@ export default {
 <style lang='sass' scoped>
 li
   list-style-type: none
+
 ul
-  padding: 0
   margin: 0
+  padding: 0
+
 .work-set li
+  color: #105447
   float: left
   text-align: center
-  padding: 0 1.5vw
   font-size: 0.7894vw
   font-weight: bold
-  color: #105447
+  padding: 0 1.5vw
+
   @media screen and (min-width: 750px)
     min-height: 20vw
     width: 21.3542vw
+
     img
       max-width: 11.9492vw
       max-height: 12vw
+
   @media screen and (max-width: 750px)
     min-height: 25vw
     width: 30vw
+
     img
       max-width: 11.9492vw
       max-height: 25vw
 
 .work-title
   padding: 0 0 2vh 0
+
 .work-image
   width: 100%
+
   img
     opacity: 0.5
 </style>
