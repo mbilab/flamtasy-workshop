@@ -89,6 +89,7 @@ export default {
     p
       font-size: 0.2em
       margin: 0
+      color: #105447
 
   ul
     margin: 0

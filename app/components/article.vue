@@ -1,30 +1,30 @@
 <template lang='pug'>
 .article
   .image: img(src='../assets/img/workshop.png')
-  .article-title 文章列表
+  .article-title 課程公告欄
   .line: img(src='../assets/img/blackline.png')
-  .list: ul
+  .course-list: ul(v-html='content')
     //li(src='') Unity3D程式教學
     //li(src='') RE:從0開始的unity工程師之路
     //li(src='') 我要做遊戲 之 企劃入門課
     //li(src='') 網路可以做到什麼?
-  .fbicon
-    i.fa.fa-facebook-official
-    a(href='https://www.facebook.com/NCKUflamtastworkshop/?hc_ref=ARQdMqVJEc11dY8ZxmfBjuTwzyPa93JdCm-rDOGWXksLbT5JKqFQf1pwDVTr3znbHzo' target='_blank')  NCKU遊戲實務工作坊
+  .fbicon: iframe(src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNCKUflamtastworkshop%2F%3Fhc_ref%3DARRNF20msYUFdco8JO-Y_eVG5Wr6zFYcy0faDerKWvFBvooNTA9ThQNP8DxTy-PjvWw&tabs&width=330&height=154&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=670837969786390" width="300" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
 </template>
 
 <script>
 export default {
   name: 'Article',
+  data(){
+    return {
+      content: require('../assets/article.html')
+    }
+  }
 }
 </script>
 
 <style lang='sass' scoped>
 img
   width: 100%
-
-li
-  list-style-type: none
 
 ul
   margin: 0
@@ -39,17 +39,7 @@ ul
   font-size: 1.7893vw
 
 .fbicon
-  padding: 2.8646vw 0 0 0
-
-  i.fa.fa-facebook-official
-    font-size: 1.5473vw
-
-  a
-    color: #000
-    display: inline
-    font-size: 0.9473vw
-    margin: 0
-    text-decoration: none
+  padding: 3.8646vw 0 0 0
 
 .image
   padding: 0 0 20px 0
@@ -58,7 +48,11 @@ ul
 .line
   padding: 0 0 11px 0
 
-.list
+</style>
+<style lang='sass'>
+.course-list
   font-size: 1.1051vw
 
+  li
+    list-style-type: none
 </style>
