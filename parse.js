@@ -4,7 +4,7 @@ var output = ''
 var info_parse = /<\!DOCTYPE html>\\n<div id='info'>.*?;/
 var about_parse = /<\!DOCTYPE html>\\n<div id='about'>.*?;/
 var work_parse = /<\!DOCTYPE html>\\n<div id='work'>.*?;/
-var article_parse = /<\!DOCTYPE html>\\n<div id='article'>.*?;/
+var article_parse = /<\!DOCTYPE html>\\n<div id='article'>.*?";/
 var video_parse = /\[\{.*?\}\]/
 
 fs.readFile('main.js', (err, main) => {
