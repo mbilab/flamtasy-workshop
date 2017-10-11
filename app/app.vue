@@ -71,6 +71,11 @@ export default {
 
 </style>
 <style lang='sass'>
+body
+  background-color: #A7CFBF
+  font-family: Microsoft JhengHei
+  margin: 0
+
 .content
   letter-spacing: 1
 
