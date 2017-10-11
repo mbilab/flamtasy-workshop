@@ -5,7 +5,7 @@ NCKUflamtastworkshop
 	npm run build
 
 	cp parse.js dist/
-	cp -r app/assets/ dist/
+	cp -r app/assets/assets dist/
 
 	cd dist
 
