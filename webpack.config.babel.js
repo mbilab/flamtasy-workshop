@@ -1,83 +1,49 @@
 import autoprefixer from 'autoprefixer'
-import {resolve} from 'path'
 import webpack from 'webpack'
-import {server} from './option.json'
 
-const config = {
-  context: resolve('app'),
-  devServer: {
-    contentBase: false,
-    disableHostCheck: true,
-    host: '0.0.0.0',
-    port: server.port,
-    inline: true,
-    stats: {
-      chunkModules: false,
+module.exports = {
+    devServer: {
+        allowedHosts: ['zoro.ee.ncku.edu.tw'],
+        host: '0.0.0.0',
+        stats: { colors: true, modules: false },
     },
-  },
-  entry: './app.js',
-  node: {
-    fs: 'empty'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.pug$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].html' } },
-          { loader: 'extract-loader' },
-          { loader: 'html-loader' },
-          { loader: 'pug-html-loader' }
+    entry: './app/app.js',
+    node: { fs: 'empty' },
+    module: {
+        rules: [
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            { test: /\.html$/, use: 'html-loader' },
+            { test: /\.(jpg|png)$/, use: 'url-loader?limit=10000&name=[hash:5].[ext]' },
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.pug$/, use: ['file-loader?name=[name].html', 'extract-loader', 'html-loader', 'pug-html-loader'] },
+            { test: /\.sass$/, use: [
+                'file-loader?name=[name].css',
+                'extract-loader',
+                'css-loader',
+                { loader: 'postcss-loader', options: { plugins: [
+                    autoprefixer,
+                ]}},
+                'sass-loader',
+            ]},
+            { test: /\.vue$/, use: { loader: 'vue-loader', options: {
+                loaders: { sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' },
+                postcss: { plugins: [autoprefixer] },
+            }}},
         ]
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].css' } },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader', options: { plugins: [autoprefixer] } },
-          { loader: 'sass-loader' }
-        ]
-      },
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: resolve('node_modules'),
-      },
-      {
-        test: /\.vue$/,
-        use: {
-          loader: 'vue-loader',
-          options: {
-            postcss: { plugins: [autoprefixer] },
-            loaders: { sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' },
-          }
-        }
-      },
-      {
-        test: /\.(eot|ico|jpg|mp3|svg|ttf|woff2|woff|png?)($|\?)/,
-        use: 'file-loader',
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader', options: { insertAt: 'top' } },
-          { loader: 'css-loader' },
-        ]
-      },
-      {
-        test: /\.html/,
-        use: [
-          { loader: 'html-loader' }
-        ]
-      }
-    ]
-  },
-  output: {
-    filename: '[name].js',
-    path: resolve('dist'),
-  },
+    },
+    output: {
+        filename: '[name].js',
+        path: `${__dirname}/dist`,
+    },
 }
 
-export default config
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins = [
+    new webpack.optimize.UglifyJsPlugin({
+        compress: { warnings: false },
+        output: { comments: false },
+    }),
+  ]
+}
+
+// vi:et:sw=4:ts=4
