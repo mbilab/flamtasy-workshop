@@ -19,7 +19,7 @@ fs.readFile('main.js', (err, main) => {
           output = output.replace(article_parse, article.toString().replace(/\n/g, '') + '";')
           fs.readFile('./assets/videoItem.json', (err, video) => {
             output = output.replace(video_parse, video.toString().replace(/\n/g, ''))
-            fs.writeFileSync('output.js', output)
+            fs.writeFileSync('main.js', output)
           })
         })
       })
