@@ -29,12 +29,12 @@ export default {
       text-align: center
       font-size: 0.7894vw
       font-weight: bold
-      padding: 0 1.5vw
+      padding: 0 0 0 2vw
       list-style-type: none
 
       @media screen and (min-width: 750px)
         min-height: 20vw
-        width: 21.3542vw
+        width: 20.3542vw
 
         img
           max-width: 20.9492vw
@@ -46,16 +46,13 @@ export default {
 
         img
           max-width: 28.9492vw
-          max-height: 25vw
+          max-height: 20vw
 
     .work-title
-      padding: 0 0 2vh 0
+      padding: 0 0 1vw 0
+      font-size: 1vw
 
     .work-image
       width: 100%
 
-.fb-comments, .fb-comments iframe[style]
-  width: 100% !important
-.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style]
-  width: 100% !important
 </style>

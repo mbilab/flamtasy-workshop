@@ -62,7 +62,8 @@ export default {
 
   .v-article
     flex: 0
-    margin: 2.0833vw 8.6979vw 0 1.7187vw
+    //margin: 2.0833vw 8.6979vw 0 1.7187vw
+    margin: 2.0833vw 4.167vw 0 1.7187vw
 
   .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
     flex: 1 1 50.3646vw
@@ -72,22 +73,16 @@ export default {
 <style lang='sass'>
 .content
   letter-spacing: 1
-  @media screen and (min-width: 500px)
-    font-size: 1em
-    line-height: 1.7em
-  @media screen and (max-width: 500px)
-    font-size: 0.5em
 
   .image
     padding: 2vw 0
     text-align: center
 
     img
-      max-height: 50vh
       max-width: 80%
 
     p
-      font-size: 0.2em
+      font-size: 1vw
       margin: 0
       color: #105447
 
@@ -103,14 +98,28 @@ export default {
       padding: 0 0 0 2vw
 
 .subtitle
-  color: #105447
+  color: #000
   font-weight: bolder
+  font-size: 2.1vw
+  margin: 0 0 0.3vw 0
 
 .title
   font-size: 2.526vw
   font-weight: bold
   padding: 0 0 0.8854vw 0
-
+.heading
+  font-size: 1.6vw
+  font-weight: bold
+  margin: 0 0 0.3vw 0
+.subheading
+  font-weight: bold
+  font-size: 1.3vw
+  margin: 0 0 0 1vw
+.context
+  font-size: 1.1vw
+  margin: 0 0 0 1vw
+  line-height: 1.8vw
+  font-weight: normal
 .thumb
   padding: 0 0 0.9896vw 0.521vw
 
@@ -122,4 +131,5 @@ export default {
 ::-webkit-scrollbar-thumb
   border-radius: 10px
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+
 </style>

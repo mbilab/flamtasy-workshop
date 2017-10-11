@@ -31,6 +31,10 @@ img
     text-align: left
     padding-left: 2vw
     list-style-type: none
+    font-size: 1.1vw
+    font-weight: normal
+    line-height: 1.8vw
+
   .green
     color: #105447
 </style>

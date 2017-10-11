@@ -44,28 +44,38 @@ ul
   margin: 0
   padding: 0
 
-.video-set li
-  color: #105447
-  float: left
-  font-size: 0.7894vw
-  font-weight: bold
-  padding: 0 1.5vw 2vw 1.5vw
+.video-set
+  position: center
 
-  @media screen and (min-width: 850px)
-    min-height: 15vw
-    width: 21.3542vw
-
-    iframe
-      width: 21.3542vw
-  @media screen and (max-width: 850px)
-    min-height: 20vw
+  li
+    color: #105447
+    float: left
+    font-size: 0.7894vw
+    font-weight: bold
+    padding: 0 1.5vw 2vw 1.5vw
+    min-height: 25vw
     width: 30vw
 
     iframe
-      width: 30.3542vw
+      width: 40vw
+      height: 25vw
+
+//  @media screen and (min-width: 850px)
+//    min-height: 15vw
+//    width: 21.3542vw
+//
+//    iframe
+//      width: 21.3542vw
+//  @media screen and (max-width: 850px)
+//    min-height: 20vw
+//    width: 30vw
+//
+//    iframe
+//      width: 30.3542vw
 
 .video-title
   padding: 0 0 0.5vh 0
+  font-size: 1vw
 
 .video-url
   width: 100%
