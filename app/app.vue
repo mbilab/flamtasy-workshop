@@ -19,7 +19,6 @@ import Work from './components/work.vue'
 import Contact from './components/contact.vue'
 import Article from './components/article.vue'
 
-
 export default {
   name: 'App',
   data(){
@@ -70,6 +69,7 @@ export default {
     padding: 0 0 0 4.167vw
 
 </style>
+
 <style lang='sass'>
 body
   background-color: #A7CFBF
@@ -112,19 +112,23 @@ body
   font-size: 2.526vw
   font-weight: bold
   padding: 0 0 0.8854vw 0
+
 .heading
   font-size: 1.6vw
   font-weight: bold
   margin: 0 0 0.3vw 0
+
 .subheading
   font-weight: bold
   font-size: 1.3vw
   margin: 0 0 0 1vw
+
 .context
   font-size: 1.1vw
   margin: 0 0 0 1vw
   line-height: 1.8vw
   font-weight: normal
+
 .thumb
   padding: 0 0 0.9896vw 0.521vw
 
