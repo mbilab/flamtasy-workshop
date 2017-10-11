@@ -1,6 +1,6 @@
 NCKUflamtastworkshop
 ====================
-	yarn insrtall
+	yarn install
 
 	npm run build
 
