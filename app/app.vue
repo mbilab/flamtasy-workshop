@@ -14,41 +14,22 @@
       li(@click='panel("contact")') 聯絡方式
     .line: img(src='./res/line.png')
   .main
-    div(v-html="panels[panel]")
-    //
-      v-info.v-info(v-if='page==1')
-      v-about.v-about(v-if='page==2')
-      v-video.v-video(v-if='page==3' :year='year')
-      v-work.v-work(v-if='page==4')
-      v-contact.v-contact(v-if='page==5')
+    div(:class="panel",v-html="panels[panel]")
     v-article.v-article
 </template>
 
 <script>
 import axios from 'axios'
-/*
-import Info from './components/info.vue'
-import About from './components/about.vue'
-import Video from './components/video.vue'
-import Work from './components/work.vue'
-import Contact from './components/contact.vue'
-*/
 import Article from './components/article.vue'
 
 export default {
 
   created() {
-    this.$data.panels.info = '<h1>Info</h1><p>Content...</p>'
-    this.$data.panels.about = '<h1>About</h1><p>Content...</p>'
-    //axios.get('info.html')
-    //  .then(function (response) {
-    //    console.log(response);
-    //  })
     let panels = ['info', 'about', 'work']
-    axios.all(panels.map(v => axios.get(v+'.html')))
-      .then(axios.spread(function(){
-      console.log(arguments)
-    }))
+    for (let v of panels)
+      axios.get(v+'.html').then(it => {
+        this.$set(this.$data.panels, v, it.data)
+      })
   },
 
   data() {
@@ -59,27 +40,12 @@ export default {
   },
 
   components: {
-    /*
-    'v-top': Top,
-    'v-info': Info,
-    'v-about': About,
-    'v-video': Video,
-    'v-work': Work,
-    'v-contact': Contact,
-    */
     'v-article': Article
   },
 
   methods: {
     toPanel: function(panel) {
       this.$data.panel = panel
-    },
-
-    panelChange: function(page){
-      this.page=page
-    },
-    yearFilter: function(year){
-      this.year=year
     },
   }
 }
