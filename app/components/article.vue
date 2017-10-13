@@ -1,10 +1,10 @@
 <template lang='pug'>
 .article
   .image
-    img.slide(src='../assets/img/workshop1.jpg')
-    img.slide(src='../assets/img/workshop2.jpg')
+    img.slide(src='../res/workshop1.jpg')
+    img.slide(src='../res/workshop2.jpg')
   .article-title 課程公告欄
-  .line: img(src='../assets/img/blackline.png')
+  .line: img(src='../res/blackline.png')
   .course-list: ul(v-html='content')
     //li(src='') Unity3D程式教學
     //li(src='') RE:從0開始的unity工程師之路

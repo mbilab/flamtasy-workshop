@@ -4,6 +4,7 @@ import webpack from 'webpack'
 module.exports = {
     devServer: {
         allowedHosts: ['zoro.ee.ncku.edu.tw'],
+        contentBase: `${__dirname}/app/assets`,
         host: '0.0.0.0',
         stats: { colors: true, modules: false },
     },
@@ -27,7 +28,7 @@ module.exports = {
     },
 }
 
-if (process.env.NODE_ENV === 'production') {
+if ('production' === process.env.NODE_ENV) {
   module.exports.plugins = [
     new webpack.optimize.UglifyJsPlugin({
         compress: { warnings: false },

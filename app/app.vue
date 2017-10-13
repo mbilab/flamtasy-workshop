@@ -1,42 +1,70 @@
 <template lang='pug'>
 .app
-  v-top(@panelChange='panelChange' @yearFilter='yearFilter')
+  .top
+    .image: img#logo(@click='toPanel("info")',src='./res/logo.png')
+    .menu: ul
+      li(v-on:click='toPanel("info")') 課程資訊
+      li(v-on:click='toPanel("about")') 關於我們
+      li 課程影片
+        .list
+          .item(v-on:click='panel("video2014")') 2014
+          .item(v-on:click='panel("video2015")') 2015
+          .item(v-on:click='panel("video2017")') 2017
+      li(v-on:click='panel("work")') 學員作品
+      li(v-on:click='panel("contact")') 聯絡方式
+    .line: img(id=bar src='./res/line.png')
   .main
-    v-info.v-info(v-if='page==1')
-    v-about.v-about(v-if='page==2')
-    v-video.v-video(v-if='page==3' :year='year')
-    v-work.v-work(v-if='page==4')
-    v-contact.v-contact(v-if='page==5')
+    div(v-html="panels[panel]")
+    //
+      v-info.v-info(v-if='page==1')
+      v-about.v-about(v-if='page==2')
+      v-video.v-video(v-if='page==3' :year='year')
+      v-work.v-work(v-if='page==4')
+      v-contact.v-contact(v-if='page==5')
     v-article.v-article
 </template>
 
 <script>
-import Top from './components/top.vue'
+/*
 import Info from './components/info.vue'
 import About from './components/about.vue'
 import Video from './components/video.vue'
 import Work from './components/work.vue'
 import Contact from './components/contact.vue'
+*/
 import Article from './components/article.vue'
 
 export default {
-  name: 'App',
-  data(){
+
+  created() {
+    this.$data.panels.info = '<h1>Info</h1><p>Content...</p>'
+    this.$data.panels.about = '<h1>About</h1><p>Content...</p>'
+  },
+
+  data() {
     return {
-      page: 1,
-      year: '',
+      panel: 'info',
+      panels: [],
     }
   },
+
   components: {
+    /*
     'v-top': Top,
     'v-info': Info,
     'v-about': About,
     'v-video': Video,
     'v-work': Work,
     'v-contact': Contact,
+    */
     'v-article': Article
   },
+
   methods: {
+    toPanel: function(panel) {
+      this.$data.panel = panel
+    },
+
     panelChange: function(page){
       this.page=page
     },
@@ -68,6 +96,73 @@ export default {
     flex: 1 1 50.3646vw
     padding: 0 0 0 4.167vw
 
+.top // {{{
+  padding: 0.9375vw 0 0 0
+
+  img
+    width: 100%
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      border-radius: 5px
+      cursor: hand
+      float: left
+      font-weight: bold
+      font-size: 1.6vw
+      margin: 0 5.1042vw 0 0
+      padding: 0.262vw
+
+    li:nth-child(3)
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+      position: relative
+
+      .list
+        background: #D1E6D7
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+        display: none
+        left: 0
+        position: absolute
+        width: 100%
+
+        .item
+          background: #afd6c7
+          border-radius: 5px
+          margin: .5em auto
+          text-align: center
+          width: 80%
+
+  ul li:hover .list
+    display: block
+
+  ul li:hover
+    background: #D1E6D7
+    color: #19826D
+
+  .image
+    cursor: hand
+    float: left
+    padding: 0 2.917vw 0 1.5625vw
+    width: 11.302vw
+
+  .line
+    clear: left
+    padding: 1.0417vw 0 1.5625vw 0
+
+  .menu
+    padding: 9.0104vw 0 0 0
+
+  #bar
+    bottom: 0
+    position: absolute
+// }}}
 </style>
 
 <style lang='sass'>
@@ -126,7 +221,7 @@ body
 .context
   font-size: 1.1vw
   margin: 0 0 0 1vw
-  line-height: 1.8vw
+  line-height: 1.6
   font-weight: normal
 
 .thumb
@@ -142,3 +237,7 @@ body
   box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
 
 </style>
+
+<!--
+vi:et
+-->
