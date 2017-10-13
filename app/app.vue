@@ -3,16 +3,16 @@
   .top
     .image: img#logo(@click='toPanel("info")',src='./res/logo.png')
     .menu: ul
-      li(v-on:click='toPanel("info")') 課程資訊
-      li(v-on:click='toPanel("about")') 關於我們
+      li(@click='toPanel("info")') 課程資訊
+      li(@click='toPanel("about")') 關於我們
       li 課程影片
         .list
-          .item(v-on:click='panel("video2014")') 2014
-          .item(v-on:click='panel("video2015")') 2015
-          .item(v-on:click='panel("video2017")') 2017
-      li(v-on:click='panel("work")') 學員作品
-      li(v-on:click='panel("contact")') 聯絡方式
-    .line: img(id=bar src='./res/line.png')
+          .item(@click='panel("video2014")') 2014
+          .item(@click='panel("video2015")') 2015
+          .item(@click='panel("video2017")') 2017
+      li(@click='panel("work")') 學員作品
+      li(@click='panel("contact")') 聯絡方式
+    .line: img(src='./res/line.png')
   .main
     div(v-html="panels[panel]")
     //
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 /*
 import Info from './components/info.vue'
 import About from './components/about.vue'
@@ -39,6 +40,15 @@ export default {
   created() {
     this.$data.panels.info = '<h1>Info</h1><p>Content...</p>'
     this.$data.panels.about = '<h1>About</h1><p>Content...</p>'
+    //axios.get('info.html')
+    //  .then(function (response) {
+    //    console.log(response);
+    //  })
+    let panels = ['info', 'about', 'work']
+    axios.all(panels.map(v => axios.get(v+'.html')))
+      .then(axios.spread(function(){
+      console.log(arguments)
+    }))
   },
 
   data() {
@@ -156,12 +166,12 @@ export default {
     clear: left
     padding: 1.0417vw 0 1.5625vw 0
 
+    img
+      bottom: 0
+      position: absolute
+
   .menu
     padding: 9.0104vw 0 0 0
-
-  #bar
-    bottom: 0
-    position: absolute
 // }}}
 </style>
 
