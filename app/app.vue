@@ -7,11 +7,11 @@
       li(@click='toPanel("about")') 關於我們
       li 課程影片
         .list
-          .item(@click='panel("video2014")') 2014
-          .item(@click='panel("video2015")') 2015
-          .item(@click='panel("video2017")') 2017
-      li(@click='panel("work")') 學員作品
-      li(@click='panel("contact")') 聯絡方式
+          .item(@click='toPanel("video2014")') 2014
+          .item(@click='toPanel("video2015")') 2015
+          .item(@click='toPanel("video2017")') 2017
+      li(@click='toPanel("work")') 學員作品
+      li(@click='toPanel("contact")') 聯絡方式
     .line: img(src='./res/line.png')
   .main
     div(:class="panel",v-html="panels[panel]")
@@ -25,7 +25,7 @@ import Article from './components/article.vue'
 export default {
 
   created() {
-    let panels = ['info', 'about', 'work']
+    let panels = ['info', 'about', 'work', 'video', 'contact']
     for (let v of panels)
       axios.get(v+'.html').then(it => {
         this.$set(this.$data.panels, v, it.data)
@@ -63,14 +63,15 @@ export default {
 .main
   display: flex
 
-  .v-article
-    flex: 0
-    //margin: 2.0833vw 8.6979vw 0 1.7187vw
-    margin: 2.0833vw 4.167vw 0 1.7187vw
-
   div
     padding: 0 0 0 4.167vw
     flex: 1 1 50.3646vw
+
+  .v-article
+    flex: 0
+    //margin: 2.0833vw 8.6979vw 0 1.7187vw
+    margin: 2.0833vw 4.167vw 0 -2vw
+
 
   //.v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
     flex: 1 1 50.3646vw
@@ -173,6 +174,25 @@ body
       list-style-type: circle
       padding: 0 0 0 2vw
 
+.contact-context
+  text-align: center
+  font-size: 1.1894vw
+  font-weight: bold
+  li
+    text-align: left
+    padding-left: 2vw
+    list-style-type: none
+    font-size: 1.1vw
+    font-weight: normal
+    line-height: 1.8vw
+
+  img
+    width: 100%
+    padding: 1.0417vw 0 1.5625vw 0
+
+  .green
+    color: #105447
+
 .subtitle
   color: #000
   font-weight: bolder
@@ -204,7 +224,7 @@ body
   padding: 0 0 0.9896vw 0.521vw
 
 ::-webkit-scrollbar
-  width: 0.5em
+  width: 5px
 ::-webkit-scrollbar-track
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   border-radius: 10px
