@@ -68,7 +68,11 @@ export default {
     //margin: 2.0833vw 8.6979vw 0 1.7187vw
     margin: 2.0833vw 4.167vw 0 1.7187vw
 
-  .v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
+  div
+    padding: 0 0 0 4.167vw
+    flex: 1 1 50.3646vw
+
+  //.v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
     flex: 1 1 50.3646vw
     padding: 0 0 0 4.167vw
 
@@ -131,10 +135,6 @@ export default {
   .line
     clear: left
     padding: 1.0417vw 0 1.5625vw 0
-
-    img
-      bottom: 0
-      position: absolute
 
   .menu
     padding: 9.0104vw 0 0 0
