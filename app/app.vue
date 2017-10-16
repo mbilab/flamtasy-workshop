@@ -25,7 +25,7 @@ import Article from './components/article.vue'
 export default {
 
   created() {
-    let panels = ['info', 'about', 'work', 'video', 'contact']
+    let panels = ['info', 'about', 'work', 'video2014', 'video2015', 'video2017', 'contact']
     for (let v of panels)
       axios.get(v+'.html').then(it => {
         this.$set(this.$data.panels, v, it.data)
@@ -69,15 +69,9 @@ export default {
 
   .v-article
     flex: 0
-    //margin: 2.0833vw 8.6979vw 0 1.7187vw
     margin: 2.0833vw 4.167vw 0 -2vw
 
-
-  //.v-top, .v-info, .v-about, .v-video, .v-work, .v-contact
-    flex: 1 1 50.3646vw
-    padding: 0 0 0 4.167vw
-
-.top // {{{
+.top
   padding: 0.9375vw 0 0 0
 
   img
@@ -139,7 +133,6 @@ export default {
 
   .menu
     padding: 9.0104vw 0 0 0
-// }}}
 </style>
 
 <style lang='sass'>
@@ -193,16 +186,84 @@ body
   .green
     color: #105447
 
-.subtitle
-  color: #000
-  font-weight: bolder
-  font-size: 2.1vw
-  margin: 0 0 0.3vw 0
+.work-set
+
+  ul
+    margin: 0
+    padding: 0
+
+    li
+      color: #105447
+      float: left
+      text-align: center
+      font-size: 0.7894vw
+      font-weight: bold
+      padding: 0 0 0 2vw
+      list-style-type: none
+
+      @media screen and (min-width: 750px)
+        min-height: 20vw
+        width: 20.3542vw
+
+        img
+          max-width: 20.9492vw
+          max-height: 13vw
+
+      @media screen and (max-width: 750px)
+        min-height: 25vw
+        width: 30vw
+
+        img
+          max-width: 28.9492vw
+          max-height: 20vw
+
+    .work-title
+      padding: 0 0 1vw 0
+      font-size: 1vw
+
+    .work-image
+      width: 100%
+
+.video-set
+  ul
+    margin: 0
+    padding: 0
+    position: center
+
+  li
+    color: #105447
+    float: left
+    font-size: 0.7894vw
+    font-weight: bold
+    list-style-type: none
+    padding: 0 1.5vw 2vw 1.5vw
+    min-height: 25vw
+    width: 30vw
+
+    iframe
+      width: 40vw
+      height: 25vw
+
+  .video-title
+    padding: 0 0 0.5vh 0
+    font-size: 1vw
+
+  .video-url
+    width: 100%
 
 .title
   font-size: 2.526vw
   font-weight: bold
   padding: 0 0 0.8854vw 0
+
+.thumb
+  padding: 0 0 0.9896vw 0.521vw
+
+.subtitle
+  color: #000
+  font-weight: bolder
+  font-size: 2.1vw
+  margin: 0 0 0.3vw 0
 
 .heading
   font-size: 1.6vw
@@ -219,9 +280,6 @@ body
   margin: 0 0 0 1vw
   line-height: 1.6
   font-weight: normal
-
-.thumb
-  padding: 0 0 0.9896vw 0.521vw
 
 ::-webkit-scrollbar
   width: 5px
