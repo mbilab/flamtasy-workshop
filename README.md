@@ -11,3 +11,4 @@ yarn run build
 * fix css bug  //done
 * local font-awesome
 * local icon  //done
+* img path 
