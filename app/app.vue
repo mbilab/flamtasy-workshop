@@ -71,6 +71,7 @@ export default {
     flex: 0
     margin: 2.0833vw 4.167vw 0 -2vw
 
+
 .top
   padding: 0.9375vw 0 0 0
 
@@ -87,7 +88,8 @@ export default {
       cursor: hand
       float: left
       font-weight: bold
-      font-size: 1.6vw
+      //font-size: 1.6vw
+      font-size: 1.85rem
       margin: 0 5.1042vw 0 0
       padding: 0.262vw
 
@@ -136,6 +138,10 @@ export default {
 </style>
 
 <style lang='sass'>
+
+@font-face
+//  src: url('./res/font/JhengHei.ttf')
+
 body
   background-color: #A7CFBF
   font-family: Microsoft JhengHei
@@ -152,7 +158,8 @@ body
       max-width: 80%
 
     p
-      font-size: 1vw
+      //font-size: 1vw
+      font-size: 1rem
       margin: 0
       color: #105447
 
@@ -169,13 +176,15 @@ body
 
 .contact-context
   text-align: center
-  font-size: 1.1894vw
+  //font-size: 1.1894vw
+  font-size: 1.3rem
   font-weight: bold
   li
     text-align: left
     padding-left: 2vw
     list-style-type: none
-    font-size: 1.1vw
+    //font-size: 1.1vw
+    font-size: 1.2rem
     font-weight: normal
     line-height: 1.8vw
 
@@ -196,7 +205,8 @@ body
       color: #105447
       float: left
       text-align: center
-      font-size: 0.7894vw
+      //font-size: 0.7894vw
+      font-size: 1rem
       font-weight: bold
       padding: 0 0 0 2vw
       list-style-type: none
@@ -233,7 +243,6 @@ body
   li
     color: #105447
     float: left
-    font-size: 0.7894vw
     font-weight: bold
     list-style-type: none
     padding: 0 1.5vw 2vw 1.5vw
@@ -246,43 +255,51 @@ body
 
   .video-title
     padding: 0 0 0.5vh 0
-    font-size: 1vw
+    //font-size: 1vw
+    font-size: 1.2rem
 
   .video-url
     width: 100%
 
 .title
-  font-size: 2.526vw
+  //font-size: 2.526vw
+  font-size: 2.9rem
   font-weight: bold
   padding: 0 0 0.8854vw 0
 
 .thumb
   padding: 0 0 0.9896vw 0.521vw
+  iframe
+    margin: 0
 
 .subtitle
   color: #000
   font-weight: bolder
-  font-size: 2.1vw
+  //font-size: 2.1vw
+  font-size: 2.4rem
   margin: 0 0 0.3vw 0
 
 .heading
-  font-size: 1.6vw
   font-weight: bold
+  //font-size: 1.6vw
+  font-size: 1.8rem
   margin: 0 0 0.3vw 0
 
 .subheading
   font-weight: bold
-  font-size: 1.3vw
+  //font-size: 1.3vw
+  font-size: 1.5rem
   margin: 0 0 0 1vw
 
 .context
-  font-size: 1.1vw
+  font-weight: normal
+  //font-size: 1.1vw
+  font-size: 1.25rem
   margin: 0 0 0 1vw
   line-height: 1.6
-  font-weight: normal
 
 ::-webkit-scrollbar
-  width: 5px
+  width: 10px
 ::-webkit-scrollbar-track
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   border-radius: 10px

@@ -7,7 +7,7 @@ yarn run start
 yarn run build
 
 # issue
-* use rem for font-size rather than vw
-* fix css bug
+* use rem for font-size rather than vw //done
+* fix css bug  //done
 * local font-awesome
-* local icon
+* local icon  //done
