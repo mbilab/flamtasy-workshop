@@ -10,7 +10,7 @@
     //li(src='') RE:從0開始的unity工程師之路
     //li(src='') 我要做遊戲 之 企劃入門課
     //li(src='') 網路可以做到什麼?
-  .fb-page: iframe(src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNCKUflamtastworkshop%2F%3Fhc_ref%3DARTFZDs1tTirTUn1tWzwUkUBhNzNSDcX1dl_mBvMnwDvEWQHlMA15TMrjD-N3VXlchs&tabs&width=390&height=154&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=670837969786390" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")  
+  .fb-page: iframe(src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNCKUflamtastworkshop%2F%3Fhc_ref%3DARTFZDs1tTirTUn1tWzwUkUBhNzNSDcX1dl_mBvMnwDvEWQHlMA15TMrjD-N3VXlchs&tabs&width=700&height=154&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=670837969786390" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")  
 </template>
 
 <script>
@@ -61,10 +61,11 @@ ul
   width: 100%
   position: center
 
-iframe
-  width: 100%
-  @media screen and (max-width: 1000px)
-    display: none
+  iframe
+    width: 100%
+    @media screen and (max-width: 1200px)
+      display: none
+
 .image
   padding: 0 0 20px 0
   width: 25.5625vw

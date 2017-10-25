@@ -138,10 +138,6 @@ export default {
 </style>
 
 <style lang='sass'>
-
-@font-face
-//  src: url('./res/font/JhengHei.ttf')
-
 body
   background-color: #A7CFBF
   font-family: Microsoft JhengHei
@@ -271,6 +267,7 @@ body
   padding: 0 0 0.9896vw 0.521vw
   iframe
     margin: 0
+    width: 100px
 
 .subtitle
   color: #000
