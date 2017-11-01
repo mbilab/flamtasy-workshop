@@ -14,14 +14,15 @@
       li(@click='toPanel("contact")') 聯絡方式
     .line: img(src='./res/line.png')
   .main
-    div(:class="panel",v-html="panels[panel]")
-    v-article.v-article
+    div(:class="panel_left",v-html="panels[panel_left]")
+    div(:class="panel_right",v-html="article_panel['article']")
+    //v-article.v-article
 </template>
 
 <script>
 import axios from 'axios'
-import Article from './components/article.vue'
 
+var myIndex = 0
 export default {
 
   created() {
@@ -30,22 +31,36 @@ export default {
       axios.get(v+'.html').then(it => {
         this.$set(this.$data.panels, v, it.data)
       })
+    axios.get('article.html').then(it => {
+      this.$set(this.$data.article_panel, 'article', it.data)
+    })
   },
-
+  updated() {
+    var carousel = function(){
+      var i
+      var x = document.getElementsByClassName("slide")
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"
+      }
+      myIndex++
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block"
+      setTimeout(carousel, 5000)
+    }
+    carousel()
+  },
   data() {
     return {
-      panel: 'info',
+      panel_left: 'info',
+      panel_right: 'article',
+      article_panel: ['article'],
       panels: [],
     }
   },
 
-  components: {
-    'v-article': Article
-  },
-
   methods: {
     toPanel: function(panel) {
-      this.$data.panel = panel
+      this.$data.panel_left = panel
     },
   }
 }
@@ -65,12 +80,6 @@ export default {
 
   div
     padding: 0 0 0 4.167vw
-    flex: 1 1 50.3646vw
-
-  .v-article
-    flex: 0
-    margin: 2.0833vw 4.167vw 0 -2vw
-
 
 .top
   padding: 0.9375vw 0 0 0
@@ -256,6 +265,51 @@ body
 
   .video-url
     width: 100%
+
+.article
+  text-align: center
+  width: 25.5625vw
+  flex: 0
+  margin: 2.0833vw 4.167vw 0 0
+  padding: 0 0 0 1vw !important
+
+  img
+    width: 100%
+
+  ul
+    margin: 0
+    padding: 0
+
+  .article-title
+    font-size: 1.7893vw
+
+  .fb-page
+    padding: 3.8646vw 0 0 0
+    width: 100%
+    position: center
+
+    iframe
+      width: 100%
+      @media screen and (max-width: 1200px)
+        display: none
+
+  .image
+    padding: 0 0 20px 0
+    width: 25.5625vw
+
+  .line
+    padding: 0 0 11px 0
+
+  .slide
+    display: none
+
+  .course-list
+    font-size: 1.1051vw
+
+    li
+      list-style-type: none
+
+
 
 .title
   //font-size: 2.526vw
