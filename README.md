@@ -12,4 +12,4 @@ yarn run build
 * local font-awesome
 * local icon  //done
 * img path //done
-* control dom
+* control dom //done

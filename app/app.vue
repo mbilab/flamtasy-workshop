@@ -22,7 +22,6 @@
 <script>
 import axios from 'axios'
 
-var myIndex = 0
 export default {
 
   created() {
@@ -36,18 +35,17 @@ export default {
     })
   },
   updated() {
-    var carousel = function(){
-      var i
+    var myIndex = 0
+    var carousel = () => {
       var x = document.getElementsByClassName("slide")
-      for (i = 0; i < x.length; i++) {
+      for (let i = 0; i < x.length; i++) {
         x[i].style.display = "none"
       }
-      myIndex++
-      if (myIndex > x.length) {myIndex = 1}
-      x[myIndex-1].style.display = "block"
-      setTimeout(carousel, 5000)
+      myIndex = (++myIndex) % x.length
+      x[myIndex].style.display = "block"
     }
-    carousel()
+
+    setInterval(carousel, 5000)
   },
   data() {
     return {
