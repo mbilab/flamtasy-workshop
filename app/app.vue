@@ -92,11 +92,11 @@ export default {
 
     li
       border-radius: 5px
-      cursor: hand
+      cursor: pointer
       float: left
       font-weight: bold
-      //font-size: 1.6vw
-      font-size: 1.85rem
+      font-size: 1.6vw
+      //font-size: 1.85rem
       margin: 0 5.1042vw 0 0
       padding: 0.262vw
 
@@ -145,6 +145,9 @@ export default {
 </style>
 
 <style lang='sass'>
+html
+  font-size: 16px
+
 body
   background-color: #A7CFBF
   font-family: Microsoft JhengHei
