@@ -14,9 +14,8 @@
       li(@click='toPanel("contact")') 聯絡方式
     .line: img(src='./res/line.png')
   .main
-    div(:class="panel_left",v-html="panels[panel_left]")
-    div(:class="panel_right",v-html="article_panel['article']")
-    //v-article.v-article
+    div(:class="panel",v-html="panels[panel]")
+    div.article(v-html="panels.article")
 </template>
 
 <script>
@@ -25,15 +24,13 @@ import axios from 'axios'
 export default {
 
   created() {
-    let panels = ['info', 'about', 'work', 'video2014', 'video2015', 'video2017', 'contact']
+    let panels = ['info', 'about', 'work', 'video2014', 'video2015', 'video2017', 'contact', 'article']
     for (let v of panels)
       axios.get(v+'.html').then(it => {
         this.$set(this.$data.panels, v, it.data)
       })
-    axios.get('article.html').then(it => {
-      this.$set(this.$data.article_panel, 'article', it.data)
-    })
   },
+
   updated() {
     var myIndex = 0
     var carousel = () => {
@@ -47,18 +44,17 @@ export default {
 
     setInterval(carousel, 5000)
   },
+
   data() {
     return {
-      panel_left: 'info',
-      panel_right: 'article',
-      article_panel: ['article'],
+      panel: 'info',
       panels: [],
     }
   },
 
   methods: {
     toPanel: function(panel) {
-      this.$data.panel_left = panel
+      this.$data.panel = panel
     },
   }
 }
@@ -96,7 +92,6 @@ export default {
       float: left
       font-weight: bold
       font-size: 1.6vw
-      //font-size: 1.85rem
       margin: 0 5.1042vw 0 0
       padding: 0.262vw
 
@@ -164,10 +159,9 @@ body
       max-width: 80%
 
     p
-      //font-size: 1vw
+      color: #105447
       font-size: 1rem
       margin: 0
-      color: #105447
 
   ul
     margin: 0
@@ -182,17 +176,15 @@ body
 
 .contact-context
   text-align: center
-  //font-size: 1.1894vw
   font-size: 1.3rem
   font-weight: bold
   li
-    text-align: left
-    padding-left: 2vw
-    list-style-type: none
-    //font-size: 1.1vw
     font-size: 1.2rem
     font-weight: normal
-    line-height: 1.8vw
+    line-height: 1.636
+    list-style-type: none
+    padding-left: 2.182em
+    text-align: left
 
   img
     width: 100%
@@ -210,12 +202,11 @@ body
     li
       color: #105447
       float: left
-      text-align: center
-      //font-size: 0.7894vw
       font-size: 1rem
       font-weight: bold
-      padding: 0 0 0 2vw
       list-style-type: none
+      padding: 0 0 0 2vw
+      text-align: center
 
       @media screen and (min-width: 750px)
         min-height: 20vw
@@ -260,9 +251,8 @@ body
       height: 25vw
 
   .video-title
-    padding: 0 0 0.5vh 0
-    //font-size: 1vw
     font-size: 1.2rem
+    padding: 0 0 0.5vh 0
 
   .video-url
     width: 100%
@@ -310,10 +300,7 @@ body
     li
       list-style-type: none
 
-
-
 .title
-  //font-size: 2.526vw
   font-size: 2.9rem
   font-weight: bold
   padding: 0 0 0.8854vw 0
@@ -326,27 +313,23 @@ body
 
 .subtitle
   color: #000
-  font-weight: bolder
-  //font-size: 2.1vw
   font-size: 2.4rem
+  font-weight: bolder
   margin: 0 0 0.3vw 0
 
 .heading
-  font-weight: bold
-  //font-size: 1.6vw
   font-size: 1.8rem
+  font-weight: bold
   margin: 0 0 0.3vw 0
 
 .subheading
-  font-weight: bold
-  //font-size: 1.3vw
   font-size: 1.5rem
+  font-weight: bold
   margin: 0 0 0 1vw
 
 .context
-  font-weight: normal
-  //font-size: 1.1vw
   font-size: 1.25rem
+  font-weight: normal
   margin: 0 0 0 1vw
   line-height: 1.6
 
